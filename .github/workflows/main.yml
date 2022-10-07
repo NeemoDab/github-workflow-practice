@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  bump-version:
+   name: Increment Git Tag
+   runs-on: ubuntu-latest
+   steps: 
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Increment Git Tag
+      id: increment-git-tag
+      uses: antonputra/increment-git-tag-test@v1
+      with: 
+        version-type: patch
+
+    - name: Get the new version
+      run: echo "New version is ${{ steps.increment-gittag.outputs.new-version }}"
+       
