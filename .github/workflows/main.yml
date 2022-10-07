@@ -10,7 +10,7 @@ jobs:
 
     - name: Increment Git Tag
       id: increment-git-tag
-      uses: antonputra/increment-git-tag-test@v1
+      uses: NeemoDab/increment-git-tag@v1
       with: 
         version-type: patch
 
